@@ -1,0 +1,58 @@
+:root{
+    --blue: #31abe8;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+
+}
+
+.navbar-child{
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.navbar-right{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-right .link{
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.navbar-left .link{
+    
+    width: 60px;
+    height: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.link{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.link:hover{
+    font-weight: 100;
+}

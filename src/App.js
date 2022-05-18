@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import './Assets/main.css';
+import {Routes, Route} from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import Navbar from './Components/navbar';
+import Home from './Components/home';
+import View from './Components/view';
+import CreateNote from './Components/CreateNote';
+import {useState, useEffect} from 'react';
+import NoteDetail from './Components/noteDetail';
+import NotFound from './Components/notFound';
+import EditNote from './Components/EditNote';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  const App = () => {
+
+    
+
+
+    return ( 
+      <div className="app">
+   
+
+      <Navbar /><br /><br /><br /><br />
+        <Routes>
+            {/* put browserRouter beside <app> in index.js */}
+            <Route path="/" element={<Home />} />
+            <Route path="/view" element={<View />}/>
+            <Route path="/add" element={<CreateNote />} />
+            <Route path="/view/:id" element={<NoteDetail />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/update/:id" element={<EditNote />} />
+        </Routes>
     </div>
-  );
-}
-
-export default App;
+   );
+  }
+   
+  export default App;
