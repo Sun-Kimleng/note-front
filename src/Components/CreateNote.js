@@ -116,7 +116,7 @@ const handleSumbit=async (e)=>{
 
             <form onSubmit={handleSumbit} className="container">   
                 <div className='header'>
-                <div className="label">Title</div><br />
+                <div className="label">Titlle</div><br />
                 <input type="text" placeholder="please enter"className={`blog-title ${error.blog_title && 'invalid'}`} value={blog_title} onChange={(e)=>{setBlogTitle(e.target.value)}} name="blog_title"/><br /><br />
                 {error.blog_title && <motion.div className="trigger-error"
                      variants={formVariant}
