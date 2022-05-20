@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import '../Assets/main.css';
+import { ApiKey } from './apiKey';
 
 class addNote extends Component {
 
@@ -27,7 +28,7 @@ class addNote extends Component {
         e.preventDefault();
 
 
-        await axios.post('http://127.0.0.1:8000/api/note/create', this.state)
+        await axios.post(`${ApiKey}/api/note/create`, this.state)
         .then(response=>{
             console.log(response.data.msg);
             

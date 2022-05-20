@@ -8,6 +8,7 @@ import { Editor } from '@tinymce/tinymce-react';
 
 import parse from'html-react-parser';
 import App from '../App';
+import { ApiKey } from './apiKey';
 
 
 const CreateNote = () => {
@@ -80,7 +81,7 @@ const handleSumbit=async (e)=>{
 
     }
 
-    await axios.post('http://127.0.0.1:8000/api/note/create', note, {headers})
+    await axios.post(`${ApiKey}/api/note/create`, note, {headers})
         .then(response=>{
             console.log(response.data.msg);
             setError([]);

@@ -1,0 +1,1 @@
+export const ApiKey = 'https://lenglengnoteapplication.herokuapp.com';

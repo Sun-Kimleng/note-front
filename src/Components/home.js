@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ApiKey } from "./apiKey";
 import CreateNote from "./CreateNote";
 import UseGetFetch from "./useGetFetch";
 
 const Home = () => {
 
-    const{data: notes, isPending}= UseGetFetch('http://127.0.0.1:8000/api/note/');
+    const{data: notes, isPending}= UseGetFetch(`${ApiKey}/api/note/`);
 
     return (
         <div className="home">

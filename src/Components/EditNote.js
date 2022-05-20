@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import parse from'html-react-parser';
 import App from '../App';
 import UseGetFetch from './useGetFetch';
+import { ApiKey } from './apiKey';
 
 const EditNote = () => {
 
@@ -17,7 +18,7 @@ const [checked, setChecked] = useState(false);
 const {id} = useParams();
 
 useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/api/note/'+id)
+    axios.get(`${ApiKey}/api/note/`+id)
     .then(
     response =>
     {
@@ -96,7 +97,7 @@ const headers =
 
 }
 
-await axios.put('http://127.0.0.1:8000/api/note/update/'+ id, note, {headers})
+await axios.put(`${ApiKey}/api/note/update/`+ id, note, {headers})
     .then(response=>{
         console.log(response.data.msg);
         setError([]);

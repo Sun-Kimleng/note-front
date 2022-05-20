@@ -4,6 +4,7 @@ import UseGetFetch from "./useGetFetch";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { ApiKey } from "./apiKey";
 
 const NoteDetail = () => {
 
@@ -11,7 +12,7 @@ const NoteDetail = () => {
 
     const {id} = useParams();
 
-    const {data:note, error, isPending } = UseGetFetch('http://127.0.0.1:8000/api/note/'+id);
+    const {data:note, error, isPending } = UseGetFetch(`${ApiKey}/api/note/`+id);
 
     const handleDelete =()=>{
         Swal.fire({
